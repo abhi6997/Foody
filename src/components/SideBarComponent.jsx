@@ -11,7 +11,7 @@ const SideBarComponent = ({navItems}) => {
 
 
   return (
-    <div className=" absolute top-0 right-0 bg-red-950 h-screen w-1/3 flex flex-col items-center justify-center  sm:hidden ">
+    <div className=" absolute top-0 right-0 bg-orange-200 h-screen w-1/3 flex flex-col items-center justify-center  sm:hidden ">
   <div>
     <RxCross2 size={30} className=" cursor-pointer absolute  right-4 top-4 " onClick={()=>dispatch(sideBarToggel(!sideBar))} />
   </div>
