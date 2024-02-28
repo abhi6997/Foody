@@ -38,9 +38,10 @@ const ImageSlider = () => {
     <div className="relative w-[90%] h-[80vh] flex justify-center items-center mx-auto mt-6">
       {Images.map((item,index)=>(<div key={index} className={`${slider === index  ? "block" : "hidden" } w-full h-full rounded-lg`}><img src={item.url} alt="" className="w-full rounded-lg h-full object-cover" /></div>))}
       <div className=" bg-black absolute w-full h-full  opacity-50 rounded-lg"></div>
+      <div className="absolute top-[50%] mx-auto text-white  font-bold text-[4vw]   translate-y-[-50%]"><p >Welcome to Food<span className=" text-red-800">Maniac</span>  </p></div>
 
-      <div><MdKeyboardArrowLeft size={60} className="cursor-pointer absolute top-[50%] left-4 text-white" onClick={handleMinus}/></div>
-      <div><MdKeyboardArrowRight  size={60} className="cursor-pointer absolute top-[50%] right-4 text-white" onClick={handlePlus} /></div>
+      <div><MdKeyboardArrowLeft size={60} className="cursor-pointer absolute top-[50%] left-4 text-white translate-y-[-50%]" onClick={handleMinus}/></div>
+      <div><MdKeyboardArrowRight  size={60} className="cursor-pointer absolute top-[50%] right-4 text-white translate-y-[-50%]" onClick={handlePlus} /></div>
     </div>
   );
 };

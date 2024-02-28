@@ -3,15 +3,17 @@ import { RxCross2 } from "react-icons/rx";
 import { FaCartShopping } from "react-icons/fa6";
 import {  useDispatch, useSelector } from 'react-redux';
 import { sideBarToggel } from '../features/sideBarSlice.js';
+import { useNavigate } from 'react-router-dom';
 
 const SideBarComponent = ({navItems}) => {
   const dispatch = useDispatch();
   const sideBar = useSelector((state)=>state.isSideBarNeeded)
+  const navigate = useNavigate();
 
 
 
   return (
-    <div className=" absolute top-0 right-0 bg-orange-200 h-screen w-1/3 flex flex-col items-center justify-center  sm:hidden ">
+    <div className="z-10 absolute top-0 right-0 bg-orange-200 h-screen w-1/3 flex flex-col items-center justify-center  sm:hidden ">
   <div>
     <RxCross2 size={30} className=" cursor-pointer absolute  right-4 top-4 " onClick={()=>dispatch(sideBarToggel(!sideBar))} />
   </div>
@@ -24,7 +26,7 @@ const SideBarComponent = ({navItems}) => {
   <ul className="flex gap-20 flex-col">
     {navItems.map((item) => (
       <li key={item.name}>
-        <button>{item.name}</button>
+        <button onClick={()=>navigate(item.slug)}>{item.name}</button>
       </li>
     ))}
   </ul>
